@@ -1,13 +1,35 @@
 import cv2
 from camera import RunCamera
 import time
+import numpy as np
 
 import binarization as bn
 import features
 
-
 EDGE_PADDING = 600
 
+
+def get_piece(frame: np.ndarray) -> np.ndarray:
+    ext_contour, _ = bn.get_external(frame)
+    rot_rect = cv2.minAreaRect(ext_contour)
+
+    center, size, angle = rot_rect
+    w, h = size
+
+    if w < h:
+        # If the width is smaller than the height, swap them and adjust the angle.
+        w, h = h, w
+        angle += 90.0
+
+    piece_center = center
+    rot_mat = cv2.getRotationMatrix2D(piece_center, angle, 1.0)
+    result_rotated = cv2.warpAffine(
+        frame, rot_mat, frame.shape[1::-1], flags=cv2.INTER_LINEAR
+    )
+    cnt_rotated, _ = bn.get_external(result_rotated)
+    x, y, w, h = cv2.boundingRect(cnt_rotated)
+    piece = result_rotated[y : y + h, x : x + w]
+    return piece
 
 class Classifier(RunCamera):
     def __init__(self, src=0, name="Camera_1"):
@@ -15,6 +37,7 @@ class Classifier(RunCamera):
         self.piece_in_frame = False
         self.new_piece_incoming = True
         self.current_frame = None
+        self.get_piece = None
 
     def separate_frame(self) -> bool:
         """Se asegura de que la pieza está completa en el frame y es válida para el procesamiento.
@@ -41,7 +64,8 @@ class Classifier(RunCamera):
 
         if self.new_piece_incoming and self.piece_in_frame and cnt_num == 1:
             with self.lock:
-                self.current_frame = frame_copy
+                self.current_frame = binary
+                self.current_piece = get_piece(binary)
             self.loggerReport.logger.info("nueva pieza en frame y válida")
             self.new_piece_incoming = False
             return True
@@ -54,9 +78,16 @@ class Classifier(RunCamera):
             )
         return frame_copy
 
+    def read_piece(self):
+        with self.lock:
+            frame_copy = (
+                self.current_piece.copy() if self.current_piece is not None else None
+            )
+        return frame_copy
+
 
 def main() -> None:
-    video_source = "./Vid_Piezas/Anillos/Anillos_Buenos.mp4"
+    video_source = "./Vid_Piezas/Zetas/Zetas_Buenas.mp4"
     camera = Classifier(src=video_source)
     camera.start()
 
