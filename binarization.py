@@ -33,11 +33,17 @@ def get_contours(frame: Frame) -> list[Contour]:
     return valid_contours
 
 
-def get_external(frame: Frame) -> (Contour, int):
+def get_external(frame: Frame) -> tuple[Contour, int]: #Si no encuentra contornos devuelve None, 0
     contours, _ = cv2.findContours(frame, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     valid_contours = [
         cnt for cnt in contours if cv2.contourArea(cnt) >= MIN_AREA_THRESHOLD
     ]
+
     if not valid_contours:
-        return (None, 0)
-    return (valid_contours[0], len(valid_contours))
+        # Retorna un contorno vacío válido para evitar errores en OpenCV
+        return (np.zeros((0, 1, 2), dtype=np.int32), 0)
+
+    # Ordenar por área y devolver el más grande
+    largest = max(valid_contours, key=cv2.contourArea)
+    return (largest, len(valid_contours))
+

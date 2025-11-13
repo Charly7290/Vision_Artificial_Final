@@ -4,8 +4,9 @@ import time
 import numpy as np
 
 import binarization as bn
+import features
 
-EDGE_PADDING = 150
+EDGE_PADDING = 600
 
 
 def get_piece(frame: np.ndarray) -> np.ndarray:
@@ -29,7 +30,6 @@ def get_piece(frame: np.ndarray) -> np.ndarray:
     x, y, w, h = cv2.boundingRect(cnt_rotated)
     piece = result_rotated[y : y + h, x : x + w]
     return piece
-
 
 class Classifier(RunCamera):
     def __init__(self, src=0, name="Camera_1"):
@@ -97,24 +97,67 @@ def main() -> None:
         while camera.isOpened():
             ret, frame = camera.read()
             if camera.separate_frame():
-                current_frame = camera.read_piece()
+                current_frame = camera.read_current()
+                if current_frame is not None:
+                    # Binarizar y obtener contorno externo
+                    binary_cf = bn.binarize(current_frame)
+                    ext_contour_cf, cnt_num_cf = bn.get_external(binary_cf)
+
+                    if cnt_num_cf > 0 and ext_contour_cf is not None and len(ext_contour_cf) >= 3:
+                        # Extraer features y clasificar
+                        features_dict_cf = features.extract_features(binary_cf, ext_contour_cf)
+                        piece_type_cf, condition_cf = features.classify_piece(features_dict_cf)
+
+                        # Dibujar texto en el current_frame
+                        cv2.putText(current_frame, f"{piece_type_cf}-{condition_cf}",
+                                    (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0,
+                                    (0, 255, 0), 2)
+                    else:
+                        cv2.putText(current_frame, "Esperando pieza...",
+                                    (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0,
+                                    (0, 255, 255), 2)
+
                 cv2.imshow("current_frame", current_frame)
 
             if not ret or frame is None:
                 time.sleep(0.01)
                 continue
+            
+            # Binarización y obtención de contornos
             binary = bn.binarize(frame)
             binaryBGR = cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR)
             contours = bn.get_contours(binary)
-            ext_contour, _ = bn.get_external(binary)
+            ext_contour, cnt_num = bn.get_external(binary)
+
             # for cnt in contours:
             #     x, y, w, h = cv2.boundingRect(cnt)
             #     cv2.rectangle(binaryBGR, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            x, y, w, h = cv2.boundingRect(ext_contour)
-            cv2.rectangle(binaryBGR, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            # cv2.imshow("Video", binaryBGR)
 
-            if cv2.waitKey(1) & 0xFF == ord("q"):
+            if cnt_num > 0 and ext_contour is not None and len(ext_contour) >= 3:
+                # Bounding box
+                x, y, w, h = cv2.boundingRect(ext_contour)
+                cv2.rectangle(binaryBGR, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+                # Clasificación usando features
+                features_dict = features.extract_features(binary, ext_contour)
+                piece_type, condition = features.classify_piece(features_dict)
+
+                # Mostrar resultado en pantalla
+                cv2.putText(binaryBGR, f"{piece_type}-{condition}", (x, y - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+
+                print(f"Tipo: {piece_type}, Condición: {condition}, "
+                      f"Circularidad={features_dict['circularity']:.2f}, "
+                      f"Solidity={features_dict['solidity']:.2f}, "
+                      f"Agujeros={features_dict['num_holes']}")
+            else:
+                # No hay pieza válida en este frame
+                cv2.putText(binaryBGR, "Esperando pieza...", (30, 30),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
+
+            cv2.imshow("Video", binaryBGR)
+
+            if cv2.waitKey(30) & 0xFF == ord("q"):
                 break
     finally:
         camera.stop()
