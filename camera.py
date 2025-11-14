@@ -20,7 +20,10 @@ class RunCamera:
 
     def start(self):
         try:
-            self.stream = cv2.VideoCapture(self.src)
+            self.stream = cv2.VideoCapture(self.src, cv2.CAP_DSHOW)
+
+            self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+            self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 
             self.fps = self.stream.get(cv2.CAP_PROP_FPS)
             if self.fps <= 0:
@@ -88,7 +91,7 @@ class RunCamera:
 
 def main():
     video_source = "./Vid_Piezas/Zetas/Zetas_Buenas.mp4"
-    camera = RunCamera(src=video_source)
+    camera = RunCamera(src=0)
     camera.start()
 
     # Wait for first frame

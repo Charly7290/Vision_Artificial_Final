@@ -1856,3 +1856,207 @@
 2025-11-14 12:35:19 - INFO - Creating Camera thread[0m
 2025-11-14 12:35:19 - INFO - Starting thread, time between frames is 0.016418[0m
 2025-11-14 12:35:21 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:45:23 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:45:24 - INFO - Video FPS: 60.90901898290598[0m
+2025-11-14 12:45:24 - INFO - Creating Camera thread[0m
+2025-11-14 12:45:24 - INFO - Starting thread, time between frames is 0.016418[0m
+2025-11-14 12:45:27 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:45:34 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:45:34 - INFO - Video FPS: 60.90901898290598[0m
+2025-11-14 12:45:35 - INFO - Creating Camera thread[0m
+2025-11-14 12:45:35 - INFO - Starting thread, time between frames is 0.016418[0m
+2025-11-14 12:45:38 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:49:03 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:49:04 - INFO - Video FPS: 30.0[0m
+2025-11-14 12:49:05 - INFO - Creating Camera thread[0m
+2025-11-14 12:49:05 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:49:13 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:49:19 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:49:20 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:49:21 - INFO - Creating Camera thread[0m
+2025-11-14 12:49:21 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:50:05 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:50:09 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:50:10 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:50:11 - INFO - Creating Camera thread[0m
+2025-11-14 12:50:11 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:50:16 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:50:45 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:50:45 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:50:47 - INFO - Creating Camera thread[0m
+2025-11-14 12:50:47 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:50:53 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:50:57 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:50:57 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:50:59 - INFO - Creating Camera thread[0m
+2025-11-14 12:50:59 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:51:21 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:51:28 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:51:29 - INFO - Video FPS: 30.0[0m
+2025-11-14 12:51:30 - INFO - Creating Camera thread[0m
+2025-11-14 12:51:30 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:52:14 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:52:37 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:52:38 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:52:39 - INFO - Creating Camera thread[0m
+2025-11-14 12:52:39 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:53:17 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:54:23 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:54:23 - WARNING - Could not determine FPS for 3. Defaulting to 30.[0m
+2025-11-14 12:54:24 - WARNING - Camera not initialized[0m
+2025-11-14 12:54:25 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:54:33 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:54:33 - WARNING - Could not determine FPS for 4. Defaulting to 30.[0m
+2025-11-14 12:54:34 - WARNING - Camera not initialized[0m
+2025-11-14 12:54:35 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:54:43 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:54:43 - WARNING - Could not determine FPS for 5. Defaulting to 30.[0m
+2025-11-14 12:54:44 - WARNING - Camera not initialized[0m
+2025-11-14 12:54:45 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:56:28 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:56:28 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:56:29 - INFO - Creating Camera thread[0m
+2025-11-14 12:56:29 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:56:48 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:57:17 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:57:17 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:57:19 - INFO - Creating Camera thread[0m
+2025-11-14 12:57:19 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:57:22 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 12:57:30 - INFO - Init constructor RunCamera[0m
+2025-11-14 12:57:30 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 12:57:32 - INFO - Creating Camera thread[0m
+2025-11-14 12:57:32 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 12:57:37 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:40:18 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:40:19 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 14:40:20 - INFO - Creating Camera thread[0m
+2025-11-14 14:40:20 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 14:40:42 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:47:39 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:47:40 - INFO - Video FPS: 30.0[0m
+2025-11-14 14:47:42 - INFO - Creating Camera thread[0m
+2025-11-14 14:47:42 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 14:47:50 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:47:59 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:47:59 - INFO - Video FPS: 60.90901898290598[0m
+2025-11-14 14:48:00 - INFO - Creating Camera thread[0m
+2025-11-14 14:48:00 - INFO - Starting thread, time between frames is 0.016418[0m
+2025-11-14 14:48:03 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:48:19 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:48:20 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 14:48:21 - INFO - Creating Camera thread[0m
+2025-11-14 14:48:21 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 14:50:33 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:57:10 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:57:10 - ERROR - Error starting camera thread: OpenCV(4.12.0) :-1: error: (-5:Bad argument) in function 'VideoCapture'
+> Overload resolution failed:
+>  - Expected 'filename' to be a str or path-like object
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - Argument 'index' is required to be an integer
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+[0m
+2025-11-14 14:57:11 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 14:57:22 - INFO - Init constructor RunCamera[0m
+2025-11-14 14:57:22 - ERROR - Error starting camera thread: OpenCV(4.12.0) :-1: error: (-5:Bad argument) in function 'VideoCapture'
+> Overload resolution failed:
+>  - Expected 'filename' to be a str or path-like object
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - Argument 'index' is required to be an integer
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+[0m
+2025-11-14 14:57:23 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:03:41 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:03:41 - ERROR - Error starting camera thread: OpenCV(4.12.0) :-1: error: (-5:Bad argument) in function 'VideoCapture'
+> Overload resolution failed:
+>  - Expected 'filename' to be a str or path-like object
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - Argument 'index' is required to be an integer
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+>  - VideoCapture() missing required argument 'apiPreference' (pos 2)
+[0m
+2025-11-14 15:03:42 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:05:36 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:05:37 - INFO - Video FPS: 30.0[0m
+2025-11-14 15:05:38 - INFO - Creating Camera thread[0m
+2025-11-14 15:05:38 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:05:45 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:09:51 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:09:51 - INFO - Video FPS: 30.0[0m
+2025-11-14 15:09:53 - INFO - Creating Camera thread[0m
+2025-11-14 15:09:53 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:09:58 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:10:05 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:10:05 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 15:10:07 - INFO - Creating Camera thread[0m
+2025-11-14 15:10:07 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:10:23 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:13:06 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:13:07 - INFO - Video FPS: 30.0[0m
+2025-11-14 15:13:08 - INFO - Creating Camera thread[0m
+2025-11-14 15:13:08 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:13:11 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:14:45 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:14:45 - INFO - Video FPS: 30.0[0m
+2025-11-14 15:14:47 - INFO - Creating Camera thread[0m
+2025-11-14 15:14:47 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:15:00 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:15:03 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:15:03 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 15:15:05 - INFO - Creating Camera thread[0m
+2025-11-14 15:15:05 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:15:13 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:18:23 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:18:26 - INFO - Creating Camera thread[0m
+2025-11-14 15:18:31 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:18:45 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:18:46 - WARNING - Could not determine FPS for 2. Defaulting to 30.[0m
+2025-11-14 15:18:47 - INFO - Creating Camera thread[0m
+2025-11-14 15:18:47 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:18:50 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:23:42 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:23:42 - INFO - Video FPS: 60.86806268725813[0m
+2025-11-14 15:23:43 - INFO - Creating Camera thread[0m
+2025-11-14 15:23:43 - INFO - Starting thread, time between frames is 0.016429[0m
+2025-11-14 15:23:45 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:23:58 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:24:03 - INFO - Video FPS: 1.0[0m
+2025-11-14 15:24:04 - INFO - Creating Camera thread[0m
+2025-11-14 15:24:04 - INFO - Starting thread, time between frames is 1.000000[0m
+2025-11-14 15:24:04 - WARNING - Failed to read frame[0m
+2025-11-14 15:24:04 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:24:05 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:24:14 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:24:19 - INFO - Video FPS: 1.0[0m
+2025-11-14 15:24:20 - INFO - Creating Camera thread[0m
+2025-11-14 15:24:20 - INFO - Starting thread, time between frames is 1.000000[0m
+2025-11-14 15:24:20 - WARNING - Failed to read frame[0m
+2025-11-14 15:24:20 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:24:21 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:26:50 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:26:55 - INFO - Video FPS: 1.0[0m
+2025-11-14 15:26:55 - INFO - Creating Camera thread[0m
+2025-11-14 15:26:55 - INFO - Starting thread, time between frames is 1.000000[0m
+2025-11-14 15:26:55 - WARNING - Failed to read frame[0m
+2025-11-14 15:26:55 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:26:57 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:28:53 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:28:58 - INFO - Video FPS: 1.0[0m
+2025-11-14 15:28:59 - INFO - Creating Camera thread[0m
+2025-11-14 15:28:59 - INFO - Starting thread, time between frames is 1.000000[0m
+2025-11-14 15:28:59 - WARNING - Failed to read frame[0m
+2025-11-14 15:28:59 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:29:00 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:30:39 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:30:40 - WARNING - Could not determine FPS for 0. Defaulting to 30.[0m
+2025-11-14 15:30:40 - INFO - Creating Camera thread[0m
+2025-11-14 15:30:40 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:30:55 - INFO - Stopping camera thread and releasing resources[0m
+2025-11-14 15:35:25 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:38:27 - INFO - Init constructor RunCamera[0m
+2025-11-14 15:38:29 - WARNING - Could not determine FPS for 0. Defaulting to 30.[0m
+2025-11-14 15:38:29 - INFO - Creating Camera thread[0m
+2025-11-14 15:38:29 - INFO - Starting thread, time between frames is 0.033333[0m
+2025-11-14 15:38:37 - INFO - Stopping camera thread and releasing resources[0m

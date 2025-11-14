@@ -34,7 +34,7 @@ def get_piece(frame: np.ndarray) -> np.ndarray:
 
 
 class Classifier(RunCamera):
-    def __init__(self, src=0, name="Camera_1"):
+    def __init__(self, src=2, name="Camera_1"):
         super(Classifier, self).__init__(src, name)
         self.piece_in_frame = False
         self.new_piece_incoming = True
@@ -99,8 +99,10 @@ class Classifier(RunCamera):
 
 def main() -> None:
     video_source = "./Vid_Piezas/Zetas/Zetas_Malas.mp4"
-    camera = Classifier(src=video_source)
+    camera = Classifier(src=0)
+
     camera.start()
+
 
     # Wait for first frame
     time.sleep(1)
@@ -136,7 +138,7 @@ def main() -> None:
                 time.sleep(0.01)
                 continue
 
-            # --- Aquí dibujamos el tag sobre el video RGB ---
+            # Aquí dibujamos el tag sobre el video RGB 
             cv2.putText(
                 frame,
                 frame_text,
