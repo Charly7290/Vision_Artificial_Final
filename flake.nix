@@ -39,6 +39,7 @@
             pkgs.python3Packages.scikit-learn
             pkgs.python3Packages.tkinter
             pkgs.python3Packages.colorlog
+            pkgs.python3Packages.pyserial
 
           ];
 
