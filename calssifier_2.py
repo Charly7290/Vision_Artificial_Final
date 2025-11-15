@@ -7,7 +7,17 @@ import binarization as bn
 import features
 from typing import Dict, Tuple
 
+from tensorflow.keras.models import load_model
+cnn_model = load_model("clasificador_zetas_cnn_V4.h5")
+
 EDGE_PADDING = 600
+
+def classify_zeta_with_cnn(piece):
+    img = cv2.resize(piece, (64,64))
+    img = img / 255.0
+    img = img.reshape(1,64,64,1)
+    pred = cnn_model.predict(img)
+    return "Defectuosa" if pred > 0.5 else "Bueno"
 
 
 def get_piece(frame: np.ndarray) -> np.ndarray:
@@ -94,11 +104,15 @@ class Classifier(RunCamera):
 
         features_dict = features.extract_features(piece, ext_contour)
         piece_type, condition = features.classify_piece(features_dict)
-        return (piece_type, condition, features_dict)
+    
+        # Si es Zeta, usar CNN para condición
+        if piece_type == "Zeta":
+            condition = classify_zeta_with_cnn(piece)
 
+        return piece_type, condition, features_dict
 
 def main() -> None:
-    video_source = "./Vid_Piezas/Zetas/Zetas_Malas.mp4"
+    video_source = "./Vid_Piezas/Zetas/Zetas_Buenas.mp4"
     camera = Classifier(src=0)
 
     camera.start()
@@ -118,6 +132,7 @@ def main() -> None:
                     f"Solidity={features_dict['solidity']:.2f}, "
                     # f"Agujeros={features_dict['num_holes']}"
                     f"Excentricidad={features_dict['excentricidad']:.2f}"
+                    f"Num Agujeros={features_dict['num_holes']}"
                     f", Aspect Ratio={features_dict['aspect_ratio']:.2f}"
                     f", Compactness={features_dict['compactness']:.2f} "
                     f", Hole Offset={features_dict['hole_offset']:.2f}"

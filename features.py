@@ -137,10 +137,10 @@ def classify_piece(features: Dict[str, Any]) -> Tuple[str, str]:
         ratio = features["hole_areas"][0] / features["area"]
         print(f"{ratio=}")
         if ratio < 0.4 and circularity > 0.7:
-            if (1.0 <= aspect_ratio <= 1.08):
+            if (0.9 <= aspect_ratio <= 1.08):
                 piece_type = "Arandela"
         else:
-            if circularity > 0.8 and excentricidad >= 0.94 and aspect_ratio <= 1.08:
+            if circularity > 0.8 and excentricidad >= 0.90 and aspect_ratio <= 1.10:
                 piece_type = "Anillo"
             else:
                 piece_type = "Unknown"
@@ -155,7 +155,7 @@ def classify_piece(features: Dict[str, Any]) -> Tuple[str, str]:
             0.50 <= excentricidad <= 0.90 and
             1.20 <= aspect_ratio <= 1.85 and
             45 <= compactness <= 70 and
-            30 <= hole_offset <= 43
+            28 <= hole_offset <= 43
         ):
             piece_type = "Zeta"
             # if features["max_defect_depth"] > 15:  # ajujstar
@@ -179,3 +179,9 @@ def classify_piece(features: Dict[str, Any]) -> Tuple[str, str]:
 # Tipo: Zeta, Condición: Bueno, Circularidad=0.19, Solidity=0.72, Excentricidad=0.77, Aspect Ratio=1.28, Compactness=67.59 , Hole Offset=30.36
 
 # Tipo: Zeta, Condición: Bueno, Circularidad=0.19, Solidity=0.71, Excentricidad=0.74, Aspect Ratio=1.33, Compactness=67.90 , Hole Offset=30.08
+
+# Tipo: Unknown, Condición: Defectuosa, Circularidad=0.74, Solidity=0.98, Excentricidad=0.98, Aspect Ratio=1.00, Compactness=17.01 , Hole Offset=1.00, Max Defect Depth=4.54, Norm Mean Defect Depth=0.0020
+
+# Tipo: Unknown, Condición: Defectuosa, Circularidad=0.21, Solidity=0.73, Excentricidad=0.71Num Agujeros=1, Aspect Ratio=1.47, Compactness=59.99 , Hole Offset=29.15, Max Defect Depth=221.54, Norm Mean Defect Depth=0.0045
+
+# Tipo: Zeta, Condición: Bueno, Circularidad=0.28, Solidity=0.74, Excentricidad=0.75Num Agujeros=1, Aspect Ratio=1.30, Compactness=45.19 , Hole Offset=30.61, Max Defect Depth=137.22, Norm Mean Defect Depth=0.0038

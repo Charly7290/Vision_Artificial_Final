@@ -295,6 +295,7 @@ def main(video_source) -> None:
                     f"Circularidad={features_dict['circularity']:.2f}, "
                     f"Solidity={features_dict['solidity']:.2f}, "
                     f"Agujeros={features_dict['num_holes']}"
+                    f"Aspect Ratio={features_dict['aspect_ratio']:.2f}"
                 )
                 # Dibujar texto en el current_frame
                 frame_text = f"{piece_type}-{condition}"
