@@ -9,6 +9,8 @@ import numpy as np
 from logger import Logger
 from PIL import Image, ImageTk
 
+import ConnectServo
+
 IMAGE_SIZE = (720, 480)
 OPTION_SIZE = (240, 240)
 
@@ -88,7 +90,7 @@ class Application(tk.Frame):
 
     def getOptions(self):
         images = ["zeta.jpeg", "tensor.jpeg", "anillo.jpeg", "arandela.jpeg"]
-        names = ["zetas", "tensors", "anillos", "arandelas"]
+        names = ["Zeta", "Tensor", "Anillo", "Arandela"]
         return names, images
 
     def createOptionFrames(self, images, names):
@@ -306,6 +308,7 @@ class Application(tk.Frame):
         ]
         processing_time = time.time() - start_time
         self.updateTimeLabel(processing_time)
+        self.sendToArduino(piece_type)
         self.updateTable(new_data)
 
     def updateTable(self, new_data):
@@ -336,6 +339,21 @@ class Application(tk.Frame):
             )
         except AttributeError:
             print("Error: labelStateText is not yet defined.")
+
+    def sendToArduino(self, piece_type):
+        if piece_type == "Unknown":
+            return
+        if self.optionVar[piece_type] == False:
+            return
+
+        if piece_type == "Zeta":
+            ConnectServo.send_servo_command(0)
+        elif piece_type == "Tensor":
+            ConnectServo.send_servo_command(1)
+        elif piece_type == "Anillo":
+            ConnectServo.send_servo_command(2)
+        elif piece_type == "Arandela":
+            ConnectServo.send_servo_command(3)
 
 
 def pad_frame(frame, target_width, target_height):
